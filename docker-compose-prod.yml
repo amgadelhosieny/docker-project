@@ -1,0 +1,12 @@
+version: "3"
+services:
+  node-app:
+    container_name: node-app-cont
+    build:
+      context: /home/amgad/work/docker/nodejs
+      target: production
+    environment:
+      - NODE_ENV=production
+    command: npm start
+    ports:
+      - "5000:4000"

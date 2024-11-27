@@ -1,0 +1,13 @@
+services:
+  node-app:
+    build:
+      context: .
+    volumes:
+      - ./src:/app/src:ro
+      - /app/node_modules  # Ensure node_modules are not overwritten by your local environment
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
