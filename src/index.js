@@ -43,7 +43,7 @@ redisClient.connect();
 app.get('/', (req, res) => {
   redisClient.set('products', 'products...');  // Storing data in Redis
   console.log(`Traffic from ${os.hostname()}`);  // Corrected string interpolation
-  res.send('<h1>Hello Tresmerge! with Watchtower</h1>');
+  res.send('<h1>Hello Amgad from AWS</h1>');
 });
 
 
@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 app.get('/data', async (req, res) => {
   try {
     const products = await redisClient.get('products');  // Getting data from Redis
-    res.send(`<h1>Hello Tresmerge!</h1><h2>${products}</h2>`);  // Corrected HTML rendering with template literals
+    res.send(`<h1>Hello from AWS</h1><h2>${products}</h2>`);  // Corrected HTML rendering with template literals
   } catch (err) {
     console.error('Error fetching data from Redis:', err);
     res.status(500).send('Error fetching data from Redis');

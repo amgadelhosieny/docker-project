@@ -2,6 +2,7 @@ version: "3"
 services:
   node-app:
     container_name: node-app-cont
+    image: amgadelhosieny/docker-project
     build:
       context: /home/amgad/work/docker/nodejs
       target: production
