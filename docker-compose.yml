@@ -1,33 +1,16 @@
 version: "3"
 services:
   node-app:
-<<<<<<< HEAD
     container_name: node-app-cont
     env_file:
-     - /home/amgad/work/docker/nodejs/.env
+      - /home/amgad/work/docker/nodejs/.env
     depends_on:
-     - postgres
-     - redis
+      - postgres
+      - redis
     ports:
       - "5000:4000"
-=======
     image: amgadelhosieny/docker-project
-    env_file:
-     - /home/amgad/work/docker/nodejs/.env
-    deploy:                          #docker swarm
-      replicas: 4
-      update_config:
-        parallelism: 2               #update number of nodes at same time
-        delay: 10s
-      restart_policy:
-        condition: on-failure 
-        delay: 10s
-    depends_on:
-     - postgres
-     - redis
 
-
->>>>>>> a57ded5 (swarm)
   # mongo:
   #   image: mongo
   #   restart: always
@@ -36,11 +19,9 @@ services:
   #   environment:
   #     MONGO_INITDB_ROOT_USERNAME: root
   #     MONGO_INITDB_ROOT_PASSWORD: example     
-<<<<<<< HEAD
-=======
+
  
  
->>>>>>> a57ded5 (swarm)
   # mongo-express:
   #   image: mongo-express
   #   restart: always

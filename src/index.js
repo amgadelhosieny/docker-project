@@ -8,8 +8,6 @@ const { Client } = require('pg');
 const PORT = process.env.PORT || 4000;
 const app = express();
 
-
-
 // Connect to Redis
 const REDIS_PORT = 6379;
 const REDIS_HOST = 'redis';  // Assuming Redis container is named 'redis' in Docker Compose
@@ -43,11 +41,11 @@ redisClient.connect();
 app.get('/', (req, res) => {
   redisClient.set('products', 'products...');  // Storing data in Redis
   console.log(`Traffic from ${os.hostname()}`);  // Corrected string interpolation
-<<<<<<< HEAD
+
   res.send('<h1>Hello Amgad from AWS</h1>');
-=======
+
   res.send('<h1>Hello Amgad from AWS how are??,Amgad</h1>');
->>>>>>> a57ded5 (swarm)
+
 });
 
 
@@ -55,11 +53,11 @@ app.get('/', (req, res) => {
 app.get('/data', async (req, res) => {
   try {
     const products = await redisClient.get('products');  // Getting data from Redis
-<<<<<<< HEAD
+
     res.send(`<h1>Hello from AWS</h1><h2>${products}</h2>`);  // Corrected HTML rendering with template literals
-=======
+
     res.send(`<h1>Hello from AWS,Amgad</h1><h2>${products}</h2>`);  // Corrected HTML rendering with template literals
->>>>>>> a57ded5 (swarm)
+
   } catch (err) {
     console.error('Error fetching data from Redis:', err);
     res.status(500).send('Error fetching data from Redis');
