@@ -1,7 +1,10 @@
 version: "3"
 services:
   node-app:
+<<<<<<< HEAD
     container_name: node-app-cont
+=======
+>>>>>>> a57ded5 (swarm)
     image: amgadelhosieny/docker-project
     build:
       context: /home/amgad/work/docker/nodejs
@@ -9,5 +12,8 @@ services:
     environment:
       - NODE_ENV=production
     command: npm start
+<<<<<<< HEAD
     ports:
       - "5000:4000"
+=======
+>>>>>>> a57ded5 (swarm)

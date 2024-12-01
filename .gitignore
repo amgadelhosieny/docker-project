@@ -7,6 +7,10 @@ node_modules/
 # Ignore logs
 *.log
 
+<<<<<<< HEAD
 # Ignore system files (macOS, Windows)
+=======
+# Ignore system files (macOS, SWindows)
+>>>>>>> a57ded5 (swarm)
 .DS_Store
 Thumbs.db
